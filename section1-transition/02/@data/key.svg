@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="key" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 392.87 486.05">
+	<defs>
+		<style>
+			.cls-1 {
+				fill: #231815;
+			}
+
+			.cls-2 {
+				fill: #353535;
+			}
+
+			.cls-2, .cls-3, .cls-4 {
+				stroke: #231815;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+				stroke-width: 10px;
+			}
+
+			.cls-3 {
+				fill: #d3d3d3;
+			}
+
+			.cls-4 {
+				fill: none;
+			}
+
+			.key-btn {
+				cursor: pointer;
+			}
+
+			.key-blade {
+				transform: rotate(-180deg);
+				transform-origin: 211.89px 213.45px;
+				transition: 0.3s;
+			}
+
+			.key-blade-flipped {
+				transform: rotate(0deg);
+			}
+		</style>
+	</defs>
+
+	<g>
+		<path class="key-blade cls-3" d="M223.23,20.53h-22.68c-6.26,0-11.34,5.08-11.34,11.34V213.28s45.35,0,45.35,0V31.87c0-6.26-5.08-11.34-11.34-11.34Z"/>
+		<path class="cls-2" d="M349.01,167.61H218.22c-30.28,0-54.82,24.54-54.82,54.82v220.05c0,11.27,9.13,20.4,20.4,20.4h130.8c30.28,0,54.82-24.54,54.82-54.82V188.02c0-11.27-9.13-20.4-20.4-20.4Z"/>
+		<circle class="key-btn cls-1" cx="211.89" cy="213.45" r="22.68"/>
+	</g>
+
+	<script>
+		const keyBtnElement = document.querySelector('.key-btn');
+		const bladeElement = document.querySelector('.key-blade');
+		keyBtnElement.addEventListener('click', e => {
+			bladeElement.classList.toggle('key-blade-flipped');
+		});
+	</script>
+</svg>
