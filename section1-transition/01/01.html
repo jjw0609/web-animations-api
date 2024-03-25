@@ -10,15 +10,29 @@
             width: 100px;
             height: 100px;
             background: coral;
-            transition: 1s;
+            transition:
+                transform 1s cubic-bezier(0.38, -0.57, 0.63, 1.54),
+                background 2s 1s linear;
         }
 
-        .box:hover {
-            transform: scale(2);
+        .box-action {
+            transform: translateX(300px);
+            background: blue;
         }
+
+        /* .box:hover {
+            transform: scale(2);
+        } */
     </style>
 </head>
 <body>
     <div class="box"></div>
+
+    <script>
+        const box = document.querySelector('.box');
+        box.addEventListener('click', () => {
+            box.classList.toggle('box-action');
+        })
+    </script>
 </body>
 </html>
