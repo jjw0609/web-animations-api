@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: coral;
+            transition:
+                transform 1s cubic-bezier(0.38, -0.57, 0.63, 1.54),
+                background 2s 1s linear;
+        }
+
+        .box-action {
+            transform: translateX(300px);
+            background: blue;
+        }
+
+        /* .box:hover {
+            transform: scale(2);
+        } */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p class="message"></p>
+
+    <script>
+        // transitionstart
+        // transitionend
+        // transitionrun
+        // transitioncancel
+
+        const box = document.querySelector('.box');
+        const message = document.querySelector('.message');
+
+        let isTransitionRunning = false;
+
+        box.addEventListener('click', () => {
+            if(!isTransitionRunning) {
+                box.classList.toggle('box-action');    
+            }
+            isTransitionRunning = true;
+
+            // // cancel 테스트
+            // setTimeout(() => {
+            //     box.remove();
+            // }, 500);
+        });
+
+        box.addEventListener('transitionstart', e => {
+            console.log(`${e.propertyName} START`);
+            message.innerText = 'START';
+        });
+
+        box.addEventListener('transitionend', e => {
+            console.log(`${e.propertyName} END`);
+            message.innerText = 'END';
+            isTransitionRunning = false;
+        });
+
+        box.addEventListener('transitionrun', e => {
+            console.log(`${e.propertyName} RUN`);
+        });
+
+        box.addEventListener('transitioncancel', e => {
+            console.log(`${e.propertyName} CANCEL`);
+            message.innerText = 'CANCEL';
+        });
+    </script>
+</body>
+</html>
