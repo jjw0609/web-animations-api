@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.95 477.58">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d3d3d3;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #231815;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: #454545;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .key-blade {
+        transition: 0.5s;
+        transform: rotate(-180deg);
+        transform-origin: 219.59px 211.59px;
+      }
+
+      .key-blade-flipped {
+        transform: rotate(0);
+      }
+    </style>
+  </defs>
+  <g id="_레이어_1-2" data-name="레이어 1">
+    <path class="key-blade cls-1" d="m230.93,18.68h-22.68c-6.26,0-11.34,5.08-11.34,11.34v181.41s45.35,0,45.35,0V30.01c0-6.26-5.08-11.34-11.34-11.34Z"/>
+    <path class="cls-2" d="m356.72,165.76h-130.8c-30.28,0-54.82,24.54-54.82,54.82v220.05c0,11.27,9.13,20.4,20.4,20.4h130.8c30.28,0,54.82-24.54,54.82-54.82v-220.05c0-11.27-9.13-20.4-20.4-20.4Z"/>
+    <circle class="key-btn cls-1" cx="219.59" cy="211.59" r="22.68"/>
+  </g>
+
+  <script>
+    const keyBtn = document.querySelector('.key-btn');
+    const keyBlade = document.querySelector('.key-blade');
+    keyBtn.addEventListener('click', () => {
+      keyBlade.classList.toggle('key-blade-flipped');
+    });
+  </script>
+</svg>
