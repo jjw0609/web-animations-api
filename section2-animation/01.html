@@ -16,7 +16,23 @@
 			height: 100px;
 			border-radius: 50%;
 			background: coral;
-			
+			animation: ball-ani 2s;
+		}
+
+		@keyframes ball-ani {
+			/* from */
+			0% {
+				transform: translateX(0) scale(1);
+			}
+
+			45% {
+				transform: translateX(-100px) scale(0.5);
+			}
+
+			/* to */
+			100% {
+				transform: translateX(200px) scale(1.5);
+			}
 		}
 
 		/* animation: 축약형, 단축형, 속기형 등으로 부른다. 줄여서 쓰는 형태로, 애니메이션의 모든 속성을 한꺼번에 지정 가능 */
