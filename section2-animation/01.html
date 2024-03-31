@@ -16,7 +16,11 @@
 			height: 100px;
 			border-radius: 50%;
 			background: coral;
-			animation: ball-ani 2s;
+			animation: ball-ani 2s infinite linear;
+		}
+
+		.ball:hover {
+			animation-play-state: paused;
 		}
 
 		@keyframes ball-ani {
@@ -25,9 +29,9 @@
 				transform: translateX(0) scale(1);
 			}
 
-			45% {
+			/* 45% {
 				transform: translateX(-100px) scale(0.5);
-			}
+			} */
 
 			/* to */
 			100% {
