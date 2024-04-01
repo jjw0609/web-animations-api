@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Animation API</title>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			background: dodgerblue;
+			will-change: transform;
+		}
+		.animation-player {
+			width: 300px;
+			margin: 30px 0;
+			font-size: 18px;
+		}
+		.player-display {
+			padding: 0.1em 0.3em;
+			border-radius: 3px;
+			color: white;
+			background-color: indianred;
+		}
+		.player-buttons {
+			display: flex;
+			overflow: hidden;
+			margin-top: 1rem;
+			border: 1px solid #222;
+			border-radius: 3px;
+			box-shadow: rgba(0, 0, 0, 0.2) 0 2px 0;
+		}
+		.btn {
+			width: 33.3%;
+			padding: 0.1em 0.3em;
+			border: 0;
+			border-left: 1px solid #222;
+			font-size: 18px;
+			text-transform: uppercase;
+			background-color: white;
+			cursor: pointer;
+		}
+		.btn:first-child {
+			border-left: 0;
+		}
+		.btn:active {
+			background-color: #eee;
+		}
+		.btn:active .btn-label {
+			position: relative;
+			top: 1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="animation-player">
+		<div class="player-display">0</div>
+		<div class="player-buttons">
+			<button class="btn" data-button-role="play">
+				<span class="btn-label">Play</span>
+			</button>
+			<button class="btn" data-button-role="pause">
+				<span class="btn-label">Pause</span>
+			</button>
+			<button class="btn" data-button-role="faster">
+				<span class="btn-label">X2</span>
+			</button>
+		</div>
+	</div>
+	
+	<script>
+		
+	</script>
+</body>
+</html>
