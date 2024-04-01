@@ -35,9 +35,9 @@
   <p class="message"></p>
 
   <script>
-    // animationstart
+    	// animationstart
 		// animationend
-    // animationiteration
+    	// animationiteration
 		// animationcancel
 
 		const ball = document.querySelector('.ball');
@@ -53,7 +53,7 @@
 			message.innerText = 'END';
 		});
 
-    ball.addEventListener('animationiteration', e => {
+    	ball.addEventListener('animationiteration', e => {
 			console.log(`${e.animationName} ITERATION`);
 			message.innerText = 'ITERATION';
 		});
@@ -62,6 +62,10 @@
 			console.log(`${e.animationName} CANCEL`);
 			message.innerText = 'CANCEL';
 		});
+
+		setTimeout(() => {
+			ball.remove();
+		}, 1000);
   </script>
 </body>
 </html>
