@@ -14,10 +14,24 @@
 	</style>
 </head>
 <body>
-	<div class="box"></div>
-	
-	<script>
-		
-	</script>
+<div class="box"></div>
+
+<script>
+	const box = document.querySelector('.box');
+	const keyframes = [
+		{transform: 'translateX(0)', opacity: 0, offset: 0},
+		{transform: 'translateX(-50px)', opacity: 1, offset: 0.6},
+		{transform: 'translateX(200px)', opacity: 0.5}
+	];
+	const options = {
+		duration: 1000,
+		easing: 'linear',
+		fill: 'forwards',
+		iterations: Infinity,
+		direction: 'alternate'
+	};
+
+	box.animate(keyframes, options);
+</script>
 </body>
 </html>
