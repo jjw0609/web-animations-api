@@ -17,7 +17,24 @@
 	<div class="box"></div>
 
 	<script>
-		
+		const box = document.querySelector('.box');
+
+		box.animate(
+			// keyframes
+			[
+				{transform: 'translateX(0)', opacity: 0, offset: 0},
+				{transform: 'translateX(-50px)', opacity: 1, offset: 0.6},
+				{transform: 'translateX(200px)', opacity: 0.5}
+			],
+			// options
+			{
+				duration: 1000,
+				easing: 'linear',
+				fill: 'forwards',
+				iterations: Infinity,
+				direction: 'alternate'
+			}
+		 );
 	</script>
 </body>
 </html>
