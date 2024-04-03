@@ -58,20 +58,41 @@
 	<div class="animation-player">
 		<div class="player-display">0</div>
 		<div class="player-buttons">
-			<button class="btn" data-button-role="play">
+			<button class="btn" data-function="play">
 				<span class="btn-label">Play</span>
 			</button>
-			<button class="btn" data-button-role="pause">
+			<button class="btn" data-function="pause">
 				<span class="btn-label">Pause</span>
 			</button>
-			<button class="btn" data-button-role="faster">
+			<button class="btn" data-function="faster">
 				<span class="btn-label">X2</span>
 			</button>
 		</div>
 	</div>
 	
 	<script>
-		
+		const playerButtons = document.querySelector('.player-buttons');
+		playerButtons.addEventListener('click', event => {
+			const target = event.target.closest('.btn');
+
+			handlePlayer(target.dataset.function);
+		});
+
+		function handlePlayer(functionName) {
+			switch (functionName) {
+				case 'play':
+					console.log('play');
+					break;
+
+				case 'pause':
+					console.log('pause');
+					break;
+
+				case 'faster':
+					console.log('faster');
+					break;
+			}
+		}
 	</script>
 </body>
 </html>
