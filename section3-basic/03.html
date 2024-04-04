@@ -71,6 +71,23 @@
 	</div>
 	
 	<script>
+		const box = document.querySelector('.box');
+		const playerDisplay = document.querySelector('.player-display');
+
+		const keyframes = [
+			{ transform: 'translateX(0)' },
+			{ transform: 'translateX(200%)' }
+		];
+
+		const options = {
+			duration: 1000,
+			iterations: Infinity,
+			direction: 'alternate'
+		};
+
+		const animation = box.animate(keyframes, options);
+		console.log(animation);
+
 		const playerButtons = document.querySelector('.player-buttons');
 		playerButtons.addEventListener('click', event => {
 			const target = event.target.closest('.btn');
@@ -82,16 +99,25 @@
 			switch (functionName) {
 				case 'play':
 					console.log('play');
+					animation.play();
 					break;
 
 				case 'pause':
 					console.log('pause');
+					animation.pause();
 					break;
 
 				case 'faster':
 					console.log('faster');
+					if(animation.playbackRate == 1) {
+						animation.playbackRate = 2;
+					} else {
+						animation.playbackRate = 1;
+					}
 					break;
 			}
+
+			playerDisplay.innerHTML = animation.playState;
 		}
 	</script>
 </body>
