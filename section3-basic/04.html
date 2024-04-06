@@ -42,6 +42,11 @@
 			console.log('애니메이션 종료!');
 			console.log(data === animation);
 		});
+
+		animation.ready.then((data) => {
+			console.log('애니메이션 시작!');
+			console.log(data === animation);
+		});
 	</script>
 </body>
 </html>
