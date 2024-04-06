@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Animation API</title>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			background: dodgerblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<script>
+		const box = document.querySelector('.box');
+
+		const animation = new Animation(
+			new KeyframeEffect(
+				// 애니메이션을 적용할 오브젝트
+				box,
+				// 키프레임 설정
+				[
+					{transform: 'translateX(0)', opacity: 0, offset: 0},
+					{transform: 'translateX(-50px)', opacity: 1, offset: 0.6},
+					{transform: 'translateX(200px)', opacity: 0.5}
+				],
+				// 타이밍 관련 옵션
+				{
+					duration: 1000,
+					easing: 'linear',
+					fill: 'forwards',
+					iterations: Infinity,
+					direction: 'alternate'
+				}
+			)
+		);
+
+		animation.play();
+	</script>
+</body>
+</html>
