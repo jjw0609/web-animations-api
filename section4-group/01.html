@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>각각의 객체에 애니메이션 적용하기</title>
+	<style>
+		.bar-container {
+			display: flex;
+			align-items: flex-end;
+		}
+		.bar {
+			width: 10px;
+			height: 200px;
+			margin: 0 10px;
+			background-color: lightgray;
+			transform-origin: bottom;
+			will-change: transform;
+		}
+		.bar:nth-child(5n+1) { background-color:crimson; }
+		.bar:nth-child(5n+2) { background-color: gold; }
+		.bar:nth-child(5n+3) { background-color: forestgreen; }
+		.bar:nth-child(5n+4) { background-color: dodgerblue; }
+		.bar:nth-child(5n+5) { background-color: darkorchid; }
+	</style>
+</head>
+<body>
+	<div class="bar-container">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+	
+	<script>
+		
+	</script>
+</body>
+</html>
