@@ -25,26 +25,36 @@
 	</style>
 </head>
 <body>
-	<div class="bar-container">
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-		<div class="bar"></div>
-	</div>
+	<div class="bar-container"></div>
 	
 	<script>
-		
+		const barContainer = document.querySelector('.bar-container');
+		const bars = [];
+		let bar;
+
+		for(let i=0 ; i<50 ; i++) {
+			bar = document.createElement('div');
+			bar.classList.add('bar');
+			barContainer.append(bar);
+			bars.push(bar);
+		}
+
+		const keyframes = [
+			{ transform: 'scaleY(0)' },
+			{ transform: 'scaleY(1)' }
+		];
+
+		const options = {
+			duration: 3000,
+			iterations: Infinity,
+			direction: 'alternate',
+			fill: 'both',
+			easing: 'ease-in-out'
+		};
+
+		bars.forEach((bar, index) => {
+			bar.animate(keyframes, {...options, delay: index * 200});
+		})
 	</script>
 </body>
 </html>
