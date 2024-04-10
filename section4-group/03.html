@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>그룹으로 재생하기</title>
+	<title>순차적으로 재생하기</title>
 	<style>
 		.bar-container {
 			display: flex;
@@ -46,8 +46,8 @@
 		];
 
 		const options = {
-			duration: 3000,
-			iterations: Infinity,
+			duration: 500,
+			// iterations: Infinity,
 			direction: 'alternate',
 			fill: 'both',
 			easing: 'ease-in-out'
@@ -55,21 +55,12 @@
 
 		const effects = [];
 		bars.forEach((bar, index) => {
-			const newOptions = {...options, delay: index * 200};
-			const effect = new KeyframeEffect(bar, keyframes, newOptions);
+			const effect = new KeyframeEffect(bar, keyframes, options);
 			effects.push(effect);
 		});
 
-		const groupEffect = new GroupEffect(effects);
-		const animation = document.timeline.play(groupEffect);
-
-		window.setTimeout(() => {
-			animation.pause();
-		}, 3000);
-
-		// bars.forEach((bar, index) => {
-		// 	bar.animate(keyframes, {...options, delay: index * 200});
-		// });
+		const sequenceEffect = new SequenceEffect(effects);
+		const animation = document.timeline.play(sequenceEffect);
 	</script>
 </body>
 </html>
