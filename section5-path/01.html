@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Motion Path</title>
+	<style>
+		.track {
+			position: relative;
+			width: 675px; /* svg viewbox랑 같은 크기로 */
+			background: #eee;
+		}
+
+		.path {
+			fill: none;
+			stroke: black;
+		}
+
+		.car {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 10px;
+			height: 20px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="track">
+		<div class="car"></div>
+		<svg class="path-svg" viewBox="0 0 674.7 531.36">
+			<path class="path" d="m.5,443.85V52.36C.5,23.72,23.72.5,52.36.5s51.86,23.22,51.86,51.86v286.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86V52.36c0-28.64,23.22-51.86,51.86-51.86s51.86,23.22,51.86,51.86v426.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86V52.36c0-28.64,23.22-51.86,51.86-51.86s51.86,23.22,51.86,51.86v226.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86v-59.96c0-28.64,23.22-51.86,51.86-51.86"/>
+		</svg>
+	</div>
+</body>
+</html>
