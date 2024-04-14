@@ -1,5 +1,5 @@
 export default class Star {
-    constructor(number, x, y, scale) {
+    constructor(number) {
         const element = document.createElement('div');
         element.classList.add('star');
         element.innerHTML = number;
