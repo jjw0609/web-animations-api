@@ -30,12 +30,15 @@
 		const zModifier = window.innerHeight;
 
 		let x, y, z;
+		let scale;
 		for(let i=0 ; i<numberOfStars ; i++) {
 			x = Math.random() * window.innerWidth;
 			y = Math.random() * window.innerHeight;
 			z = Math.random() * zModifier;
+			scale = zModifier / (zModifier + z);
+			console.log(z, scale);
 
-			new Star(i, x, y);
+			new Star(i, x, y, scale);
 		}
 	</script>
 </body>
