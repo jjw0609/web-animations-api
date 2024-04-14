@@ -1,12 +1,9 @@
 export default class Star {
     constructor(number) {
-        const element = document.createElement('div');
-        element.classList.add('star');
-        element.innerHTML = number;
-        element.style.left = `${x}px`;
-        element.style.top = `${y}px`;
-        element.style.transform = `scale(${5})`;
+        this.element = document.createElement('div');
+        this.element.classList.add('star');
+        this.element.innerHTML = number;
 
-        document.body.append(element);
+        document.body.append(this.element);
     }
 }

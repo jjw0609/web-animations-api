@@ -36,21 +36,44 @@
 
 		const numberOfStars = 200;
 		const zModifier = window.innerHeight;
+		const effects = [];
 
 		let x, y, z;
 		let scale;
+		let keyframes, options;
+		let pointFrom, pointTo;
+		let star;
 		for(let i=0 ; i<numberOfStars ; i++) {
 			x = Math.random() * window.innerWidth;
 			y = Math.random() * window.innerHeight;
 			z = Math.random() * zModifier;
 
-			const pointFrom = set3DPoint(x, y, z);
-			const pointTo = set3DPoint(x, y, z - zModifier);
-			console.log(pointFrom);
-			console.log(pointTo);
+			pointFrom = set3DPoint(x, y, z);
+			pointTo = set3DPoint(x, y, z - zModifier);
 
-			new Star(i);
+			star = new Star(i);
+
+			keyframes = [
+				{
+					transform: `translate(${pointFrom[0]}px, ${pointFrom[1]}px) scale(${pointFrom[2]})`
+				},
+				{
+					transform: `translate(${pointTo[0]}px, ${pointTo[1]}px) scale(${pointTo[2]})`
+				}
+			];
+
+			options = {
+				duration: 1000,
+				iterations: Infinity,
+				fill: 'both',
+				easing: 'linear'
+			};
+
+			effects.push(new KeyframeEffect(star.element, keyframes, options));
 		}
+
+		const groupEffect = new GroupEffect(effects);
+		document.timeline.play(groupEffect);
 	</script>
 </body>
 </html>
