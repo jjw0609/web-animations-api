@@ -27,11 +27,6 @@
 			offset-path: path("m.5,443.85V52.36C.5,23.72,23.72.5,52.36.5s51.86,23.22,51.86,51.86v286.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86V52.36c0-28.64,23.22-51.86,51.86-51.86s51.86,23.22,51.86,51.86v426.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86V52.36c0-28.64,23.22-51.86,51.86-51.86s51.86,23.22,51.86,51.86v226.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86v-59.96c0-28.64,23.22-51.86,51.86-51.86");
 			offset-distance: 0;
 			offset-rotate: auto 90deg;
-			transition: 5s;
-		}
-
-		.track:hover .car {
-			offset-distance: 1500px;
 		}
 	</style>
 </head>
@@ -42,5 +37,31 @@
 			<path class="path" d="m.5,443.85V52.36C.5,23.72,23.72.5,52.36.5s51.86,23.22,51.86,51.86v286.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86V52.36c0-28.64,23.22-51.86,51.86-51.86s51.86,23.22,51.86,51.86v426.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86V52.36c0-28.64,23.22-51.86,51.86-51.86s51.86,23.22,51.86,51.86v226.64c0,28.64,23.22,51.86,51.86,51.86s51.86-23.22,51.86-51.86v-59.96c0-28.64,23.22-51.86,51.86-51.86"/>
 		</svg>
 	</div>
+
+	<script>
+		const car = document.querySelector('.car');
+		const track = document.querySelector('.track');
+
+		const animation = car.animate(
+			[
+				{ offsetDistance: 0 },
+				{ offsetDistance: '100%' },
+			],
+			{
+				duration: 3000,
+				iterations: Infinity
+			}
+		);
+
+		animation.pause();
+
+		track.addEventListener('click', () => {
+			if(animation.playState === 'paused') {
+				animation.play();
+			} else if(animation.playState === 'running') {
+				animation.pause();
+			}
+		});
+	</script>
 </body>
 </html>
