@@ -19,6 +19,11 @@ body {
 	background: dodgerblue;
 }
 
+.wrap {
+	/*overflow-x: hidden;*/
+	contain: paint;
+}
+
 .airplane {
 	position: absolute;
 	left: 0;
