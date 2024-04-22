@@ -19,7 +19,33 @@ body {
 	background: dodgerblue;
 }
 
+.wrap {
+	contain: paint;
+}
+
 .para {
   padding: 1em;
   font-size: 50px;
+}
+
+.gallery {
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	width: 300vw;
+	max-width: 4000px;
+	height: 100vh;
+	border: 10px dashed deeppink;
+}
+
+.gallery-item {
+	width: 70vw;
+	max-width: 800px;
+	flex-shrink: 0;
+}
+
+.gallery-timeline {
+	height: 2000px;
+	border: 10px dashed mediumaquamarine;
 }
