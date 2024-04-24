@@ -1,0 +1,189 @@
+@charset 'utf-8';
+
+html, body, h1, h2, h3, h4, h5, h6, p, blockquote, code, img, dl, dt, dd, ol, ul, li, fieldset, legend, caption { margin: 0; padding: 0; border: 0; }
+div, span, article, section, header, footer, p, ul, li, fieldset, legend, label, a, nav, h1, h2, h3 { box-sizing: border-box; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul, li { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { max-width: 100%; height: auto; }
+
+html {
+	font-size: 20px;
+	font-family: Roboto;
+	line-height: 1.6;
+}
+
+body {
+	color: white;
+	background: dodgerblue;
+}
+
+a {
+	color: gold;
+}
+
+.wrap {
+	/* 가로스크롤 방지 */
+	/* overflow: hidden을 하면 sticky가 제대로 동작 안하는 버그가 있음 */
+	/* 따라서 contain: paint를 사용 */
+	contain: paint;
+}
+
+.header {
+	height: 400px;
+	padding: 2rem;
+}
+
+.main-copy {
+	font-size: 3rem;
+}
+
+.airstrip {
+	position: absolute;
+	top: 0;
+	width: 7px;
+	height: 700px;
+	margin-top: 400px;
+	background: white;
+}
+
+.airstrip-a {
+	left: calc(42% - 3px);
+}
+
+.airstrip-b {
+	left: calc(58% - 3px);
+}
+
+.page-content {
+	position: absolute;
+	left: 50vw;
+	top: 0;
+	z-index: 100;
+	width: 90%;
+	height: 100%;
+	line-height: 1.6;
+	transform: translateX(-50%);
+	/* background: rgba(255,0,0,0.5); */
+}
+
+.text-block {
+	position: absolute;
+	width: 50%;
+}
+
+
+
+/* airplane timeline */
+.airplane-scroll-timeline {
+	position: relative;
+	height: calc(4315px + 2000px - 100vh);
+	margin: 200px 0;
+	border: 10px dashed yellow;
+}
+
+.airplane {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	transform: rotate(180deg);
+	will-change: offset-distance;
+	offset-distance: 100%;
+	offset-rotate: auto 90deg;
+	offset-path: path('m523.89,4304.71v-102.65c0-380.2-349.01-699.56-349.01-699.56-444.83-376.4,250.93-486.65,250.93-486.65,444.83-102.65,557.68-250.93,557.68-250.93,283.93-319.37-486.96-646.34-486.96-646.34-258.91-112.16-314.04-296.55-314.04-296.55C-5.24,1295.45,395.39,1206.1,502.03,1255.07c65,29.84,105.64,109.85,90,179.91-35.06,157.03-234.66,151.32-234.66,151.32-287.05,0-340.67-193.9-340.67-193.9-85.15-285.15,215.21-534.18,215.21-534.18,309.81-245.7,291.98-636.53,291.98-636.53V0');
+}
+
+.airplane[data-direction='up'] {
+	transform: rotate(0deg);
+}
+
+.track {
+	position: absolute;
+	left: 50vw;
+	top: 0;
+	width: 1048px;
+	transform: translateX(-50%);
+	will-change: transform;
+	/* background: rgba(255,255,0,0.2); */
+}
+
+.flight-path {
+	fill: none;
+	stroke: white;
+	stroke-width: 7;
+	stroke-dasharray: 14;
+}
+
+.hello-jeju {
+	fill: white;
+	transform-origin: 388px 1431px;
+	will-change: transform, opacity;
+}
+
+
+
+/* gallery-timeline */
+.gallery-timeline {
+	position: absolute;
+	left: 3%;
+	top: 2350px;
+	width: 94%;
+	height: 2000px;
+	border: 10px dashed MediumAquaMarine;
+}
+
+.jeju {
+	position: sticky;
+	top: 0;
+	width: 360px;
+	margin: 0 auto;
+	padding-top: 340px;
+}
+
+.gallery {
+	display: flex;
+	align-items: center;
+	position: sticky;
+	z-index: 10;
+	top: 0;
+	width: 350vw;
+	height: 100vh;
+	margin-top: -650px; /* jeju-container랑 겹치도록 */
+	will-change: transform, opacity;
+	/* border: 10px dashed deeppink; */
+}
+
+.gallery-item {
+	width: 70vw;
+	flex-shrink: 0;
+	/* border: 10px solid rgba(255, 255, 255, 0.3); */
+}
+
+.gallery-photo {
+	overflow: hidden;
+	width: 50%;
+	margin: auto;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+@media (max-width: 1000px) {
+	html {
+		font-size: 14px;
+	}
+
+	.airstrip-a {
+		left: calc(35% - 3px);
+	}
+
+	.airstrip-b {
+		left: calc(65% - 3px);
+	}
+
+	.main-copy {
+		font-size: 2.5rem;
+	}
+}
